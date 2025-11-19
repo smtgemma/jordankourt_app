@@ -7,8 +7,8 @@ import '../constants/app_colors.dart';
 class AppTextTheme {
   static TextTheme get light => TextTheme(
     titleLarge: GoogleFonts.manrope(
-        fontSize: 64,
-        fontWeight: FontWeight.w600,
+        fontSize: 24,
+        fontWeight: FontWeight.w500,
         color: Colors.white
     ),
 
@@ -22,24 +22,24 @@ class AppTextTheme {
       fontWeight: FontWeight.w400,
       color: Colors.white,
     ),
-    bodySmall: GoogleFonts.outfit(
+    bodySmall: GoogleFonts.manrope(
       fontSize: 16,
       fontWeight: FontWeight.w400,
       color: Colors.white,
     ),
-    labelLarge: GoogleFonts.inter(
-      fontSize: 18,
-      fontWeight: FontWeight.w700,
+    labelLarge: GoogleFonts.manrope(
+      fontSize: 14,
+      fontWeight: FontWeight.w500,
       color: Colors.white,
     ),
-    labelMedium: GoogleFonts.inter(
-      fontSize: 16,
-      fontWeight: FontWeight.w700,
-      color: Colors.white,
-    ),
-    labelSmall: GoogleFonts.inter(
+    labelMedium: GoogleFonts.manrope(
       fontSize: 12,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w500,
+      color: Colors.white,
+    ),
+    labelSmall: GoogleFonts.manrope(
+      fontSize: 10,
+      fontWeight: FontWeight.w500,
       color: Colors.white,
     ),
 

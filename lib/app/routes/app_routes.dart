@@ -8,6 +8,8 @@ abstract class Routes {
   static const HOME = _Paths.HOME;
   static const ONBOARDING = _Paths.ONBOARDING;
   static const LOGIN = _Paths.LOGIN;
+  static const FORGET_PASSWORD = _Paths.FORGET_PASSWORD;
+  static const NAVBAR = _Paths.NAVBAR;
 }
 
 abstract class _Paths {
@@ -16,4 +18,6 @@ abstract class _Paths {
   static const HOME = '/home';
   static const ONBOARDING = '/onboarding';
   static const LOGIN = '/login';
+  static const FORGET_PASSWORD = '/forget-password';
+  static const NAVBAR = '/navbar';
 }

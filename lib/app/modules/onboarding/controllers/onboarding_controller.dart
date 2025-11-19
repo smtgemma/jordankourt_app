@@ -53,14 +53,10 @@ class OnboardingController extends GetxController {
   }
 
   void previousPage() {
-    pageController.previousPage(
-      duration: const Duration(milliseconds: 300),
-      curve: Curves.easeInOut,
-    );
+    Get.toNamed(Routes.LOGIN);
   }
 
   void completeOnboarding() {
-    // Navigate to home or main screen
      Get.offAllNamed(Routes.LOGIN);
     print('Onboarding completed!');
   }

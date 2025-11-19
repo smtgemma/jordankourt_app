@@ -18,7 +18,7 @@ class AppTheme {
         centerTitle: true,
         iconTheme: IconThemeData(color: AppColors.primaryColor),
       ),
-      textTheme: AppTextTheme.light,
+      //textTheme: AppTextTheme.light,
       inputDecorationTheme: InputDecorationThemeData(
         border: InputBorder.none,
         // Also apply it to other border states for consistency.

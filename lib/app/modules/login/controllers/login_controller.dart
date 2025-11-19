@@ -1,18 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jordankourt_app/app/routes/app_pages.dart';
 
-class LoginController extends GetxController {
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
+class LoginController extends GetxController with GetSingleTickerProviderStateMixin {
+  late TabController tabController;
+  final loginEmailController = TextEditingController();
+  final registerEmailController = TextEditingController();
+  final registerNameController = TextEditingController();
+  final loginPasswordController = TextEditingController();
+  final registerPasswordController = TextEditingController();
 
-  final obscurePassword = true.obs;
+
+  final obscureLoginPassword = true.obs;
+  final obscureRegisterPassword = true.obs;
+
   final rememberMe = false.obs;
   final agreeTerms = false.obs;
   final errorMessage = ''.obs;
 
-  void togglePasswordVisibility() {
-    obscurePassword.value = !obscurePassword.value;
+  void toggleLoginPassword() {
+    obscureLoginPassword.value = !obscureLoginPassword.value;
   }
+
+  void toggleRegisterPassword() {
+    obscureRegisterPassword.value = !obscureRegisterPassword.value;
+  }
+
 
   void toggleRememberMe(bool? value) {
     rememberMe.value = value ?? false;
@@ -27,20 +40,20 @@ class LoginController extends GetxController {
     errorMessage.value = '';
 
     // Validate email
-    if (emailController.text.isEmpty) {
+    if (loginEmailController.text.isEmpty) {
       errorMessage.value = '*Invalid email or password*';
       return;
     }
 
     // Validate email format
     final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
-    if (!emailRegex.hasMatch(emailController.text)) {
+    if (!emailRegex.hasMatch(loginEmailController.text)) {
       errorMessage.value = '*Invalid email or password*';
       return;
     }
 
     // Validate password
-    if (passwordController.text.isEmpty) {
+    if (loginPasswordController.text.isEmpty) {
       errorMessage.value = '*Invalid email or password*';
       return;
     }
@@ -57,8 +70,8 @@ class LoginController extends GetxController {
 
     // TODO: Implement actual login logic with API
     // For demo, simulate invalid credentials
-    if (emailController.text != 'demo@example.com' ||
-        passwordController.text != 'password') {
+    if (loginEmailController.text != 'demo@example.com' ||
+        loginPasswordController.text != 'password') {
       errorMessage.value = '*Invalid email or password*';
       return;
     }
@@ -72,7 +85,7 @@ class LoginController extends GetxController {
 
   void forgotPassword() {
     // TODO: Navigate to forgot password screen
-    Get.toNamed('/forgot-password');
+    Get.toNamed(Routes.FORGET_PASSWORD);
   }
 
   void navigateToRegister() {
@@ -85,9 +98,15 @@ class LoginController extends GetxController {
   }
 
   @override
+  void onInit() {
+    super.onInit();
+    tabController = TabController(length: 2, vsync: this);
+  }
+
+  @override
   void onClose() {
-    emailController.dispose();
-    passwordController.dispose();
+    loginEmailController.dispose();
+    loginPasswordController.dispose();
     super.onClose();
   }
 }

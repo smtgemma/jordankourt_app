@@ -10,6 +10,14 @@ abstract class Routes {
   static const LOGIN = _Paths.LOGIN;
   static const FORGET_PASSWORD = _Paths.FORGET_PASSWORD;
   static const NAVBAR = _Paths.NAVBAR;
+  static const PROFILE = _Paths.PROFILE;
+  static const CHAT = _Paths.CHAT;
+  static const GUIDE = _Paths.GUIDE;
+  static const SHOP = _Paths.SHOP;
+  static const WORKSHOP = _Paths.WORKSHOP;
+  static const VIN = _Paths.VIN;
+  static const EDIT_PROFILE = _Paths.EDIT_PROFILE;
+  static const CHANGE_PASSWORD = _Paths.CHANGE_PASSWORD;
 }
 
 abstract class _Paths {
@@ -20,4 +28,12 @@ abstract class _Paths {
   static const LOGIN = '/login';
   static const FORGET_PASSWORD = '/forget-password';
   static const NAVBAR = '/navbar';
+  static const PROFILE = '/profile';
+  static const CHAT = '/chat';
+  static const GUIDE = '/guide';
+  static const SHOP = '/shop';
+  static const WORKSHOP = '/workshop';
+  static const VIN = '/vin';
+  static const EDIT_PROFILE = '/edit-profile';
+  static const CHANGE_PASSWORD = '/change-password';
 }

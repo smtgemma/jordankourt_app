@@ -11,9 +11,9 @@ class AppTheme {
       cardColor: AppColors.primaryColor,
       shadowColor: AppColors.shadowColor,
 
-      fontFamily: 'Poppins',
+      //fontFamily: 'Poppins',
       appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.primaryColor,
+        backgroundColor: Colors.black,
         elevation: 0,
         centerTitle: true,
         iconTheme: IconThemeData(color: AppColors.primaryColor),

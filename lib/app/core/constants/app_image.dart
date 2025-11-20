@@ -15,6 +15,10 @@ class SvgImagePath{
   static const String vinFill = 'assets/svg/vin-fill.svg';
   static const String profile = 'assets/svg/profile-fill.svg';
   static const String profileFill = 'assets/svg/profile.svg';
+  static const String homeFrame = 'assets/svg/Frame.svg';
+  static const String setting = 'assets/svg/setting.svg';
+  static const String book = 'assets/svg/book.svg';
+  static const String premium = 'assets/svg/premium.svg';
 }
 
 class ImagePath{

@@ -28,7 +28,7 @@ class NavbarView extends GetView<NavbarController> {
           ),
           child: SafeArea(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+              padding:  EdgeInsets.symmetric(horizontal: 0.h, vertical: 8),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: List.generate(
@@ -59,29 +59,31 @@ class NavbarView extends GetView<NavbarController> {
     return GestureDetector(
       onTap: () => controller.changeIndex(index),
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            SvgPicture.asset(
-              isSelected ? selectedIcon : unselectedIcon,
-              width: 28,
-              height: 28,
-              colorFilter: ColorFilter.mode(
-                isSelected ? const Color(0xFFFF6B35) : Colors.white70,
-                BlendMode.srcIn,
+        padding:  EdgeInsets.symmetric(vertical: 8.h, horizontal: 7.w),
+        child: FittedBox(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SvgPicture.asset(
+                isSelected ? selectedIcon : unselectedIcon,
+                width: 15.h,
+                height: 28,
+                colorFilter: ColorFilter.mode(
+                  isSelected ? const Color(0xFFFF6B35) : Colors.white70,
+                  BlendMode.srcIn,
+                ),
               ),
-            ),
-            const SizedBox(height: 4),
-            Text(
-              label,
-              style: TextStyle(
-                color: isSelected ? const Color(0xFFFF6B35) : Colors.white70,
-                fontSize: 12,
-                fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
+              const SizedBox(height: 4),
+              Text(
+                label,
+                style: TextStyle(
+                  color: isSelected ? const Color(0xFFFF6B35) : Colors.white70,
+                  fontSize: 12,
+                  fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

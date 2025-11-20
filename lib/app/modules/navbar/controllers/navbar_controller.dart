@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jordankourt_app/app/core/constants/app_image.dart';
+import 'package:jordankourt_app/app/modules/chat/views/chat_view.dart';
+import 'package:jordankourt_app/app/modules/guide/views/guide_view.dart';
+import 'package:jordankourt_app/app/modules/home/views/home_view.dart';
+import 'package:jordankourt_app/app/modules/shop/views/shop_view.dart';
+import 'package:jordankourt_app/app/modules/vin/views/vin_view.dart';
+import 'package:jordankourt_app/app/modules/workshop/views/workshop_view.dart';
+
+import '../../profile/views/profile_view.dart';
 
 class NavbarController extends GetxController {
   var selectedIndex = 0.obs;
@@ -37,8 +45,8 @@ class NavbarController extends GetxController {
       'label': 'VIN'
     },
     {
-      'selectedIcon': SvgImagePath.profileFill,
-      'unselectedIcon': SvgImagePath.profile,
+      'selectedIcon': SvgImagePath.profile,
+      'unselectedIcon': SvgImagePath.profileFill,
       'label': 'Profile'
     },
   ];
@@ -48,20 +56,20 @@ class NavbarController extends GetxController {
     {'icon': Icons.chat_bubble_outline, 'label': 'Chat'},
     {'icon': Icons.menu_book, 'label': 'Guides'},
     {'icon': Icons.shopping_cart_outlined, 'label': 'Shop'},
-    {'icon': Icons.location_on_outlined, 'label': 'Worksho...'},
+    {'icon': Icons.location_on_outlined, 'label': 'Workshop    '},
     {'icon': Icons.local_shipping_outlined, 'label': 'VIN'},
     {'icon': Icons.person_outline, 'label': 'Profile'},
   ];
 
   // Add your pages here
   final List<Widget> pages = [
-    const Center(child: Text('Home Page', style: TextStyle(fontSize: 24))),
-    const Center(child: Text('Chat Page', style: TextStyle(fontSize: 24))),
-    const Center(child: Text('Guides Page', style: TextStyle(fontSize: 24))),
-    const Center(child: Text('Shop Page', style: TextStyle(fontSize: 24))),
-    const Center(child: Text('Workshop Page', style: TextStyle(fontSize: 24))),
-    const Center(child: Text('VIN Page', style: TextStyle(fontSize: 24))),
-    const Center(child: Text('Profile Page', style: TextStyle(fontSize: 24))),
+    HomeView(),
+    ChatView(),
+    GuideView(),
+    ShopView(),
+   WorkshopView(),
+    VinView(),
+    ProfileView()
   ];
 
   void changeIndex(int index) {
